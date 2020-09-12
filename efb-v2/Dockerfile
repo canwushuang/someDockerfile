@@ -55,8 +55,10 @@ RUN set -ex \
         && cd ~ \
         && git clone https://github.com/catbaron0/efb-mp-instanceview-middleware.git \
         && git clone https://github.com/catbaron0/efb-link_preview-middleware.git \
+        && git clone https://github.com/catbaron0/efb-search_msg-middleware.git \
         && cd ~/efb-mp-instanceview-middleware/ && python3 setup.py install \
         && cd ~/efb-link_preview-middleware/ && python3 setup.py install \
-        && rm -rf ~/efb-mp-instanceview-middleware/ ~/efb-link_preview-middleware/
+        && cd ~/efb-search_msg-middleware/ && python3 setup.py install \
+        && rm -rf ~/efb-mp-instanceview-middleware/ ~/efb-link_preview-middleware/ ~/efb-search_msg-middleware/
 
 CMD ["ehforwarderbot"]
