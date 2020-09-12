@@ -17,18 +17,8 @@ jobs:
       - name: 构建并推送到Dockerhub官方镜像仓库
         uses: docker/build-push-action@v1
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
           dockerfile: efb-v2/Dockerfile
           repository: canwushuang/efb-v2
-          tag_with_ref: true
-
-      - name: 构建并推送到Github Packages
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          dockerfile: efb-v2/Dockerfile
-          registry: docker.pkg.github.com
-          repository: canwushuang/somedockerfile/efb-v2
           tag_with_ref: true
