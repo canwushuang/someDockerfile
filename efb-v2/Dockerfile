@@ -50,8 +50,6 @@ RUN set -ex \
         && pip3 install lottie \
         && pip3 install cairosvg \
         && pip3 install jieba \
-        && sed -i 's/channel_emoji = "💬"/channel_emoji = "𝙒𝙚𝙘𝙝𝙖𝙩"/g' /usr/lib/python3.8/site-packages/efb_wechat_slave/__init__.py \
-        && sed -i "s/{self.chat_type_emoji}/丨/g" /usr/lib/python3.8/site-packages/efb_telegram_master/chat.py \
         && cd ~ \
         && git clone https://github.com/canwushuang/efb-wechat-slave.git \
         && git clone https://github.com/catbaron0/efb-mp-instanceview-middleware.git \
@@ -59,6 +57,8 @@ RUN set -ex \
         && cd ~/efb-wechat-slave/ && python3 setup.py install \
         && cd ~/efb-mp-instanceview-middleware/ && python3 setup.py install \
         && cd ~/efb-link_preview-middleware/ && python3 setup.py install \
+        && sed -i 's/channel_emoji = "💬"/channel_emoji = "𝙒𝙚𝙘𝙝𝙖𝙩"/g' /usr/lib/python3.8/site-packages/efb_wechat_slave/__init__.py \
+        && sed -i "s/{self.chat_type_emoji}/丨/g" /usr/lib/python3.8/site-packages/efb_telegram_master/chat.py \
         && rm -rf ~/efb-wechat-slave/ ~/efb-mp-instanceview-middleware/ ~/efb-link_preview-middleware/
 
 CMD ["ehforwarderbot"]
