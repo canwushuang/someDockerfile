@@ -47,21 +47,21 @@ RUN set -ex \
         && pip3 install --upgrade pip \
         && pip3 install ehforwarderbot==2.0.0 \
         && pip3 install efb-telegram-master==2.2.0 \
-        && pip3 install efb-wechat-slave==2.0.2 \
         && pip3 install efb-qq-slave==2.0.0b3 \
         && pip3 install lottie \
         && pip3 install cairosvg \
         && pip3 install jieba \
         && sed -i 's/channel_emoji = "💬"/channel_emoji = "𝙒𝙚𝙘𝙝𝙖𝙩"/g' /usr/lib/python3.8/site-packages/efb_wechat_slave/__init__.py \
-        && wget https://raw.githubusercontent.com/canwushuang/efb-wechat-slave/mian/efb_weechat_slave/slave_message.py -P /usr/lib/python3.8/site-packages/efb_wechat_slave/ \
         && sed -i "s/{self.chat_type_emoji}/丨/g" /usr/lib/python3.8/site-packages/efb_telegram_master/chat.py \
         && cd ~ \
+        && git clone https://github.com/canwushuang/efb-wechat-slave.git \
         && git clone https://github.com/catbaron0/efb-mp-instanceview-middleware.git \
         && git clone https://github.com/catbaron0/efb-link_preview-middleware.git \
         && git clone https://github.com/catbaron0/efb-search_msg-middleware.git \
+        && cd ~/efb-wechat-slave/ && python3 setup.py install \
         && cd ~/efb-mp-instanceview-middleware/ && python3 setup.py install \
         && cd ~/efb-link_preview-middleware/ && python3 setup.py install \
         && cd ~/efb-search_msg-middleware/ && python3 setup.py install \
-        && rm -rf ~/efb-mp-instanceview-middleware/ ~/efb-link_preview-middleware/ ~/efb-search_msg-middleware/
+        && rm -rf ~/efb-wechat-slave/ ~/efb-mp-instanceview-middleware/ ~/efb-link_preview-middleware/ ~/efb-search_msg-middleware/
 
 CMD ["ehforwarderbot"]
