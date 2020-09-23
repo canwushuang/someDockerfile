@@ -25,6 +25,7 @@ RUN set -ex \
                 py3-cryptography \
                 py3-decorator \
                 git \
+                wget \
                 jpeg-dev \
                 zlib-dev \
                 tzdata \
@@ -52,6 +53,7 @@ RUN set -ex \
         && pip3 install cairosvg \
         && pip3 install jieba \
         && sed -i 's/channel_emoji = "💬"/channel_emoji = "𝙒𝙚𝙘𝙝𝙖𝙩"/g' /usr/lib/python3.8/site-packages/efb_wechat_slave/__init__.py \
+        && wget https://raw.githubusercontent.com/canwushuang/efb-wechat-slave/mian/efb_weechat_slave/slave_message.py -P /usr/lib/python3.8/site-packages/efb_wechat_slave/ \
         && sed -i "s/{self.chat_type_emoji}/丨/g" /usr/lib/python3.8/site-packages/efb_telegram_master/chat.py \
         && cd ~ \
         && git clone https://github.com/catbaron0/efb-mp-instanceview-middleware.git \
