@@ -25,7 +25,6 @@ RUN set -ex \
                 py3-cryptography \
                 py3-decorator \
                 git \
-                wget \
                 jpeg-dev \
                 zlib-dev \
                 tzdata \
