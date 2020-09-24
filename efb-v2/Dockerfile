@@ -60,7 +60,7 @@ RUN set -ex \
         && cd ~/efb-wechat-slave/ && python3 setup.py install \
         && cd ~/efb-mp-instanceview-middleware/ && python3 setup.py install \
         && cd ~/efb-link_preview-middleware/ && python3 setup.py install \
-        && cd ~/efb-search_msg-middleware/ && Python3 setup.py install \
+        && cd ~/efb-search_msg-middleware/ && python3 setup.py install \
         && sed -i "s/{self.chat_type_emoji}/丨/g" /usr/lib/python3.8/site-packages/efb_telegram_master/chat.py \
         && rm -rf ~/efb-wechat-slave/ ~/efb-mp-instanceview-middleware/ ~/efb-link_preview-middleware/ ~/efb-search_msg-middleware/
 
