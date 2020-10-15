@@ -51,6 +51,7 @@ RUN set -ex \
         && pip3 install lottie \
         && pip3 install cairosvg \
         && pip3 install jieba \
+        && pip3 install wechat_sender \
         && cd ~ \
         && git clone https://github.com/canwushuang/efb-wechat-slave.git \
         && git clone https://github.com/catbaron0/efb-mp-instanceview-middleware.git \
