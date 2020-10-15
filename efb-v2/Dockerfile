@@ -2,7 +2,6 @@ FROM alpine
 MAINTAINER AKira <e.akimoto.akira@gmail.com>
 
 
-
 ENV LANG C.UTF-8
 
 RUN set -ex \
