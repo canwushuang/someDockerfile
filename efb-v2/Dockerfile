@@ -40,8 +40,6 @@ RUN set -ex \
                 tiff-dev \
                 tk-dev \
                 tcl-dev \
-                gcc \
-                musl-dev \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
 
@@ -53,7 +51,6 @@ RUN set -ex \
         && pip3 install lottie \
         && pip3 install cairosvg \
         && pip3 install jieba \
-        && pip3 install wechat_sender \
         && cd ~ \
         && git clone https://github.com/canwushuang/efb-wechat-slave.git \
         && git clone https://github.com/catbaron0/efb-mp-instanceview-middleware.git \
@@ -64,5 +61,4 @@ RUN set -ex \
         && cd ~/efb-link_preview-middleware/ && python3 setup.py install \
         && sed -i "s/{self.chat_type_emoji}/丨/g" /usr/lib/python3.8/site-packages/efb_telegram_master/chat.py \
         && rm -rf ~/efb-wechat-slave/ ~/efb-mp-instanceview-middleware/ ~/efb-link_preview-middleware/
-RUN apk del gcc musl-dev
 CMD ["ehforwarderbot"]
