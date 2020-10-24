@@ -1,4 +1,4 @@
-FROM arm64v8/alpine:3.7
+FROM arm64v8/alpine:edge
 MAINTAINER AKira <e.akimoto.akira@gmail.com>
 
 
