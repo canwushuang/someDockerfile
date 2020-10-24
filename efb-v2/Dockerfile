@@ -40,7 +40,7 @@ RUN set -ex \
                 openjpeg-dev \
                 tiff-dev \
                 tk-dev \
-                tcl-dev 
+                tcl-dev \
         && ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime \
         && echo $TIME_ZONE > /etc/timezone
 
