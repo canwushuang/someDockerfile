@@ -15,7 +15,8 @@ jobs:
       - uses: actions/checkout@master
 
       - name: 构建并推送到Dockerhub官方镜像仓库
-        uses: docker/build-push-action@v1
+        #uses: docker/build-push-action@v1
+        uses: elgohr/Publish-Docker-Github-Action@master
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
