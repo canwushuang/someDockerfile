@@ -1,4 +1,4 @@
-FROM arm64v8/alpine:latest
+FROM alpine:latest
 MAINTAINER AKira <e.akimoto.akira@gmail.com>
 
 ENV LANG C.UTF-8
