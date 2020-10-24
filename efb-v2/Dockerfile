@@ -1,4 +1,4 @@
-FROM alpine
+FROM arm64v8/alpine
 MAINTAINER AKira <e.akimoto.akira@gmail.com>
 
 
