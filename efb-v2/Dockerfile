@@ -41,7 +41,8 @@ RUN set -ex \
                 tiff-dev \
                 tk-dev \
                 tcl-dev 
-        && ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo $TIME_ZONE > /etc/timezone
+        && ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime \
+        && echo $TIME_ZONE > /etc/timezone
 
 RUN set -ex \
         && pip3 install --upgrade pip \
