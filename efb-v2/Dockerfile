@@ -1,4 +1,4 @@
-FROM arm64v8/alpine:$ALPINE_VER
+FROM arm64v8/alpine:3.7
 MAINTAINER AKira <e.akimoto.akira@gmail.com>
 
 
