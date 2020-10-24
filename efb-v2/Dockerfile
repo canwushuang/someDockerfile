@@ -40,8 +40,9 @@ RUN set -ex \
                 openjpeg-dev \
                 tiff-dev \
                 tk-dev \
-                tcl-dev 
-
+                tcl-dev \
+        && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+        && echo "Asia/Shanghai" > /etc/timezone
 RUN set -ex \
         && pip3 install --upgrade pip \
         && pip3 install ehforwarderbot==2.0.0 \
