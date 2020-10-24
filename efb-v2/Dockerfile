@@ -1,8 +1,6 @@
 FROM arm64v8/alpine:latest
 MAINTAINER AKira <e.akimoto.akira@gmail.com>
 
-
-
 ENV LANG C.UTF-8
 ENV TIME_ZONE=Asia/Shanghai 
 
