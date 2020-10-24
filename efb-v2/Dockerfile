@@ -3,6 +3,7 @@ MAINTAINER AKira <e.akimoto.akira@gmail.com>
 
 
 ENV LANG C.UTF-8
+ENV TIME_ZONE=Asia/Shanghai 
 
 RUN set -ex \
         && apk update && apk upgrade \
@@ -39,9 +40,8 @@ RUN set -ex \
                 openjpeg-dev \
                 tiff-dev \
                 tk-dev \
-                tcl-dev \
-        && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-        && echo "Asia/Shanghai" > /etc/timezone
+                tcl-dev 
+        && ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo $TIME_ZONE > /etc/timezone
 
 RUN set -ex \
         && pip3 install --upgrade pip \
