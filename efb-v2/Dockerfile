@@ -40,8 +40,8 @@ RUN set -ex \
                 tiff-dev \
                 tk-dev \
                 tcl-dev \
-        && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-        && echo "Asia/Shanghai" > /etc/timezone
+        #&& ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+        #&& echo "Asia/Shanghai" > /etc/timezone
 
 RUN set -ex \
         && pip3 install --upgrade pip \
