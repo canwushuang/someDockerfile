@@ -1,4 +1,4 @@
-FROM arm64v8/alpine:$ALPINE_VER AS source
+FROM arm64v8/alpine:$ALPINE_VER
 MAINTAINER AKira <e.akimoto.akira@gmail.com>
 
 
