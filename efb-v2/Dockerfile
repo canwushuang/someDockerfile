@@ -1,5 +1,6 @@
 FROM alpine:latest
-MAINTAINER AKira <e.akimoto.akira@gmail.com>
+MAINTAINER xiaohu <zhuangxiaohu@gmail.com>
+
 
 ENV LANG C.UTF-8
 ENV TIME_ZONE=Asia/Shanghai 
