@@ -21,5 +21,5 @@ jobs:
               imageName: canwushuang/sharelist
               platform: linux/amd64,linux/arm64,linux/arm/v7 # 你准备构建的镜像平台
               tag: latest # 默认latest，可以针对平台，修改tag
-              dockerHubUser: ${{ secrets.dockerUser }} # docker hub userid
-              dockerHubPassword: ${{ secrets.dockerPassword }} # docker hub password
+              dockerUser: ${{ secrets.DOCKERHUB_USERNAME }} # docker hub userid
+              dockerPassword: ${{ secrets.DOCKERHUB_TOKEN }} # docker hub password
