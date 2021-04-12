@@ -1,0 +1,25 @@
+name: 构建sharelist Docker镜像
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'sharelist/Dockerfile'
+jobs:
+  build:
+      runs-on: ubuntu-latest
+      name: Build image job
+      steps:
+          - name: 构建并推送到Dockerhub官方镜像仓库
+            uses: actions/checkout@master
+          - name: Build and publish image
+            uses: ilteoood/docker_buildx@master
+            with:
+              publish: true
+              dockerFile: sharelist/Dockerfile
+              imageName: reruin/sharelist
+              platform: linux/amd64,linux/arm64,linux/arm/v7 # 你准备构建的镜像平台
+              tag: latest # 默认latest，可以针对平台，修改tag
+              dockerHubUser: ${{ secrets.DOCKERHUB_USERNAME }} # docker hub userid
+              dockerHubPassword: ${{ secrets.DOCKERHUB_TOKEN }} # docker hub password
