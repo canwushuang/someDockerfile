@@ -44,8 +44,8 @@ RUN set -ex \
         && echo "Asia/Shanghai" > /etc/timezone
 RUN set -ex \
         && pip3 install --upgrade pip \
-        && pip3 install ehforwarderbot==2.0.0 \
-        && pip3 install efb-telegram-master==2.2.0 \
+        && pip3 install ehforwarderbot==2.1.1 \
+        && pip3 install efb-telegram-master==2.2.4 \
         && pip3 install efb-qq-slave==2.0.0b3 \
         && pip3 install efb-telegram-slave \
         && pip3 install lottie \
@@ -59,6 +59,6 @@ RUN set -ex \
         && cd ~/efb-wechat-slave/ && python3 setup.py install \
         && cd ~/efb-mp-instanceview-middleware/ && python3 setup.py install \
         && cd ~/efb-link_preview-middleware/ && python3 setup.py install \
-        && sed -i "s/{self.chat_type_emoji}/丨/g" /usr/lib/python3.8/site-packages/efb_telegram_master/chat.py \
+        && sed -i "s/{self.chat_type_emoji}/丨/g" /usr/lib/python3.9/site-packages/efb_telegram_master/chat.py \
         && rm -rf ~/efb-wechat-slave/ ~/efb-mp-instanceview-middleware/ ~/efb-link_preview-middleware/
 CMD ["ehforwarderbot"]
