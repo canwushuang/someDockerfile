@@ -1,7 +1,6 @@
 FROM alpine:latest
 MAINTAINER xiaohu <zhuangxiaohu@gmail.com>
 
-
 ENV LANG C.UTF-8
 ENV TIME_ZONE=Asia/Shanghai 
 
