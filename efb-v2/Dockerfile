@@ -47,7 +47,7 @@ RUN set -ex \
         && pip3 install ehforwarderbot==2.1.1 \
         && pip3 install efb-telegram-master==2.2.4 \
         && pip3 install efb-qq-slave==2.0.0b3 \
-        && pip3 install efb-telegram-slave \
+        && pip3 install git+https://github.com/SharzyL/efb-telegram-slave \
         && pip3 install lottie \
         && pip3 install cairosvg \
         && pip3 install jieba \
